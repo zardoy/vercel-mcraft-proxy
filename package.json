@@ -1,0 +1,14 @@
+{
+    "name": "vercel-mcraft-proxy",
+    "version": "0.0.0",
+    "private": true,
+    "license": "MIT",
+    "scripts": {},
+    "devDependencies": {
+        "@zardoy/tsconfig": "^1.5.1",
+        "typescript": "^5.7.2"
+    },
+    "dependencies": {
+        "@types/node": "^22.10.1"
+    }
+}

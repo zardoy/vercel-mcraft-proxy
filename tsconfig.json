@@ -1,0 +1,9 @@
+{
+    "extends": "@zardoy/tsconfig/tsconfig",
+    "compilerOptions": {
+        "allowJs": true
+    },
+    "include": [
+        "api"
+    ]
+}
