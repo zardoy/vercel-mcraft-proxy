@@ -6,7 +6,7 @@ import { promisify } from 'util';
 const pipelineAsync = promisify(pipeline);
 
 export default async function handler(req: IncomingMessage, res: ServerResponse) {
-    const url = new URL(req.url!, `http://${req.headers.host}`).searchParams.get('url');
+    const url = new URL(req.url!, `http://${req.headers.host}`).pathname.split('/').slice(1).join('/')
 
     if (!url) {
         res.statusCode = 400;
