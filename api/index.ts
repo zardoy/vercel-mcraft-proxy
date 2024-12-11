@@ -6,6 +6,14 @@ import { promisify } from 'util';
 const pipelineAsync = promisify(pipeline);
 
 export default async function handler(req: IncomingMessage, res: ServerResponse) {
+    if (req.method === 'OPTIONS') {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'GET');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+        res.end();
+        return;
+    }
+
     // const url = new URL(req.url!, `http://${req.headers.host}`).pathname.split('/').slice(1).join('/')
     const url = req.url!.split('/').slice(2).join('/')
 
